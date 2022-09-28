@@ -1,0 +1,25 @@
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: absolute;
+}
+
+.navigation ul {
+    display: flex;
+}
+
+.navigation li {
+    list-style: none;
+    /* margin-right: 40px; */
+}
+
+.navigation a {
+    margin-right: 40px;
+}
+
+.resume {
+
+}
