@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { About } from '../components/About'
 import { Contact } from '../components/Contact'
 import { Education } from '../components/Education'
+import { Intro } from '../components/Intro'
 import { LeftSiderbar } from '../components/LeftSiderbar'
 import { Projects } from '../components/Projects'
 import { RightSidebar } from '../components/RightSidebar'
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
         <RightSidebar/>
         <LeftSiderbar/>
         <main className={styles.main}>
+          <Intro/>
           <About/>
           {/* <Skills/>
           <Projects/>

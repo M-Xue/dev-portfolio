@@ -9,17 +9,22 @@
 
 .navigation ul {
     display: flex;
+    list-style: none;
 }
 
-.navigation li {
-    list-style: none;
-    /* margin-right: 40px; */
-}
+
 
 .navigation a {
     margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation svg {
+    margin-right: 10px;
 }
 
 .resume {
-
+    display: flex;
+    align-items: center;
 }
