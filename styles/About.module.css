@@ -5,20 +5,17 @@
     /* align-items: center; */
     flex-direction: column;
     width: min(1200px, 100%);
-    font-family: 'Fira Code',monospace;
+    font-family: 'CascadiaCode',monospace;
+    /* font-family: 'Fira Code',monospace; */
 }
 
 .flex {
     display: flex;
 }
 
-.hello {
-    font-size: clamp(40px, 8vw, 60px);
-}
+
 
 .name {
-    /* color: #0F1B61; */
-    /* color: blueviolet; */
     background-image: linear-gradient(rgb(255, 28, 247) 25%, #682AE9 100%);
     background-size: 100%;
     background-clip: text;
@@ -27,35 +24,113 @@
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
 }
+
+
+
+.hello {
+    font-size: clamp(40px, 8vw, 60px);
+    position: relative;
+    width: fit-content;
+
+    /* text-align: center ; */
+    /* height: max-content; */
+}
+
+.hello::before, 
+.hello::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hello::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 3s steps(26) 1.5s forwards; 
+}
+
+.hello::after {
+    width: 0.6em;
+    background: black;
+    animation: 
+        cursor 3s steps(26) 1.5s forwards, 
+        blink 1s linear infinite,
+        remove 4.5s step-end 2s forwards;
+}
+
+.cursor {
+    height: inherit;
+    width: 0.6em;
+    font-size: inherit;
+    background-color: black;
+    position: absolute;
+    animation: 
+        cursor 3s steps(26) 1.5s forwards, 
+        blink 1s linear infinite,
+        remove 4.5s step-end 1.5s forwards;
+}
+
 .secondaryH1 {
     font-size: clamp(40px, 8vw, 60px);
-    display: inline;
+    position: relative;
+    width: fit-content;
 }
-  
-.cursor {
-    width: clamp(20px, 4vw, 30px);
-    height: clamp(40px, 8vw, 60px);
+
+.fullstack {
+    background-image: linear-gradient(#F8EF42 25%, #ebe33c 100%);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+
+.secondaryH1::before, 
+.secondaryH1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.secondaryH1::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 3s steps(26) 6.5s forwards; 
+}
+
+.secondaryH1::after {
+    width: 0.6em;
     background: black;
-    animation: blink 1s step-start 0s infinite;
+    visibility: hidden;
+    animation: 
+        cursor 3s steps(26) 6.5s forwards, 
+        blink 1s linear 6.5s infinite,
+        remove 4.5s step-end 7.5s forwards,
+        hidden 0s linear 6.5s forwards;
 }
 
 
+@keyframes cursor {
+    to {left: 100%}
+}
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+   50% {
+     opacity: 0;
+   }
+}
+@keyframes remove {
+   to {
+     opacity: 0;
+   }
+}
+@keyframes hidden {
+    to {visibility: inherit;}
 }
 
-
-
-
-
-
-.test {
-    width: clamp(20px, 4vw, 30px);
-    height: clamp(40px, 8vw, 60px);
-    background-color: black;
-    display: inline-block;
-    transform: translate(0, 4px);
-}
 

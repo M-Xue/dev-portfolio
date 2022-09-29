@@ -11,7 +11,8 @@
 .container svg {
     margin-bottom: 15px;
     transition: 0.15s;
-    color: #0F1B61;
+    /* color: #0F1B61; */
+    color: black;
 }
 
 .container svg:hover {
