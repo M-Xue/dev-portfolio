@@ -12,12 +12,11 @@ export const About = () => {
       </div> */}
       
       <h1 className={styles.hello}>
-        {/* <div className={styles.cursor}></div> */}
-        Hello, my name is <span className={styles.name}>Max Xue</span>.
-      
-      
+        <span className={styles.nowrap}>Hello, my name is</span> <span className={styles.name}>Max Xue</span>.
       </h1>
-      <h1 className={styles.secondaryH1}>I am a <span className={styles.fullstack}>fullstack</span> engineer. </h1>
+      <h1 className={styles.secondaryH1}>
+        <span className={styles.nowrap}>I am a <span className={styles.fullstack}>fullstack</span></span> engineer.
+      </h1>
       
 
 
@@ -30,3 +29,6 @@ export const About = () => {
 }
 
 // <span className={styles.test}></span>
+
+        /* <div className={styles.cursor}></div> */
+        /* <span className={styles.nowrap}></span> */

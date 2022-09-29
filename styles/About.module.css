@@ -15,6 +15,15 @@
 
 
 
+
+
+/* ************** need to redo the animations so they fill in for each span instead of each whole heading */
+
+
+.nowrap {
+    white-space: nowrap;
+}
+
 .name {
     background-image: linear-gradient(rgb(255, 28, 247) 25%, #682AE9 100%);
     background-size: 100%;
@@ -23,17 +32,14 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+
+    white-space: nowrap;
 }
 
-
-
 .hello {
-    font-size: clamp(40px, 8vw, 60px);
+    font-size: clamp(10px, 6vw, 60px);
     position: relative;
     width: fit-content;
-
-    /* text-align: center ; */
-    /* height: max-content; */
 }
 
 .hello::before, 
@@ -57,23 +63,13 @@
     animation: 
         cursor 3s steps(26) 1.5s forwards, 
         blink 1s linear infinite,
-        remove 4.5s step-end 2s forwards;
+        remove 4.5s step-end 1s forwards;
 }
 
-.cursor {
-    height: inherit;
-    width: 0.6em;
-    font-size: inherit;
-    background-color: black;
-    position: absolute;
-    animation: 
-        cursor 3s steps(26) 1.5s forwards, 
-        blink 1s linear infinite,
-        remove 4.5s step-end 1.5s forwards;
-}
+
 
 .secondaryH1 {
-    font-size: clamp(40px, 8vw, 60px);
+    font-size: clamp(10px, 6vw, 60px);
     position: relative;
     width: fit-content;
 }
@@ -87,7 +83,6 @@
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
 }
-
 
 .secondaryH1::before, 
 .secondaryH1::after {
@@ -108,12 +103,18 @@
     width: 0.6em;
     background: black;
     visibility: hidden;
+    opacity: 0;
     animation: 
         cursor 3s steps(26) 6.5s forwards, 
-        blink 1s linear 6.5s infinite,
-        remove 4.5s step-end 7.5s forwards,
-        hidden 0s linear 6.5s forwards;
+        reverseBlink 1s linear 5.5s infinite,
+        remove 4.5s step-end 7s forwards,
+        hidden 0s linear 5.5s forwards;
 }
+
+
+
+
+
 
 
 @keyframes cursor {
@@ -124,6 +125,11 @@
      opacity: 0;
    }
 }
+@keyframes reverseBlink {
+    50% {
+      opacity: 1;
+    }
+ }
 @keyframes remove {
    to {
      opacity: 0;
@@ -132,5 +138,3 @@
 @keyframes hidden {
     to {visibility: inherit;}
 }
-
-

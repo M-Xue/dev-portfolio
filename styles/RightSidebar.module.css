@@ -26,6 +26,6 @@
 .vertLine {
     width: 2px;
     background-color: #0F1B61;
-    height: 125px;
+    height: 10vh;
     border-radius: 50px;
 }
