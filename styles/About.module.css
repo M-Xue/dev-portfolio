@@ -20,30 +20,38 @@
 /* ************** need to redo the animations so they fill in for each span instead of each whole heading */
 
 
-.nowrap {
-    white-space: nowrap;
+
+.h1 {
+    font-size: clamp(10px, 6vw, 60px);
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.name {
-    background-image: linear-gradient(rgb(255, 28, 247) 25%, #682AE9 100%);
+.blueFont, .yellowFont {
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+}
 
+.blueFont {
+    background-image: linear-gradient(rgb(255, 28, 247) 25%, #682AE9 100%);
+}
+
+.yellowFont {
+    background-image: linear-gradient(#F8EF42 25%, #ebe33c 100%);
+}
+
+.hello, .name, .fullstack, .engineer {
     white-space: nowrap;
-}
-
-.hello {
-    font-size: clamp(10px, 6vw, 60px);
     position: relative;
-    width: fit-content;
 }
 
-.hello::before, 
-.hello::after {
+
+.hello::before, .name::before, .fullstack::before, .engineer::before,
+.hello::after, .name::after, .fullstack::after, .engineer::after{
     content: '';
     position: absolute;
     top: 0;
@@ -54,66 +62,70 @@
 
 .hello::before {
     background-color: rgb(249,250,251);
-    animation: cursor 3s steps(26) 1.5s forwards; 
+    animation: cursor 2.16s steps(18) 1.5s forwards; 
 }
 
 .hello::after {
     width: 0.6em;
     background: black;
     animation: 
-        cursor 3s steps(26) 1.5s forwards, 
+        cursor 2.16s steps(18) 1.5s forwards, 
         blink 1s linear infinite,
-        remove 4.5s step-end 1s forwards;
+        remove 3.66s step-end forwards;
 }
 
-
-
-.secondaryH1 {
-    font-size: clamp(10px, 6vw, 60px);
-    position: relative;
-    width: fit-content;
-}
-
-.fullstack {
-    background-image: linear-gradient(#F8EF42 25%, #ebe33c 100%);
-    background-size: 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
-}
-
-.secondaryH1::before, 
-.secondaryH1::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.secondaryH1::before {
+.name::before {
     background-color: rgb(249,250,251);
-    animation: cursor 3s steps(26) 6.5s forwards; 
+    animation: cursor 0.84s steps(7) 3.66s forwards; 
 }
 
-.secondaryH1::after {
+.name::after {
     width: 0.6em;
     background: black;
     visibility: hidden;
-    opacity: 0;
     animation: 
-        cursor 3s steps(26) 6.5s forwards, 
-        reverseBlink 1s linear 5.5s infinite,
-        remove 4.5s step-end 7s forwards,
-        hidden 0s linear 5.5s forwards;
+        cursor 0.84s steps(7) 3.66s forwards, 
+        blink 1s linear infinite,
+        remove 5.5s step-end forwards,
+        hidden 0s linear 3.66s forwards;
 }
 
 
 
 
+
+
+.fullstack::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 2.04s steps(17) 5.5s forwards; 
+}
+
+.fullstack::after {
+    width: 0.6em;
+    background: black;
+    visibility: hidden;
+    animation: 
+        cursor 2.04s steps(17) 5.5s forwards, 
+        blink 1s linear infinite,
+        remove 7.54s step-end forwards,
+        hidden 0s linear 5.5s forwards;
+}
+
+.engineer::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 0.96s steps(8) 7.54s forwards; 
+}
+
+.engineer::after {
+    width: 0.6em;
+    background: black;
+    visibility: hidden;
+    animation: 
+        cursor 0.96s steps(8) 7.54s forwards, 
+        blink 1s linear infinite,
+        remove 9.5s step-end forwards,
+        hidden 0s linear 7.54s forwards;
+}
 
 
 
@@ -137,4 +149,4 @@
 }
 @keyframes hidden {
     to {visibility: inherit;}
-}
+} 
