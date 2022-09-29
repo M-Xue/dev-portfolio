@@ -62,21 +62,23 @@
 
 .hello::before {
     background-color: rgb(249,250,251);
-    animation: cursor 2.16s steps(18) 1.5s forwards; 
+    animation: cursor 2.16s steps(18) 2.5s forwards; 
 }
 
 .hello::after {
     width: 0.6em;
     background: black;
+    visibility: hidden;
     animation: 
-        cursor 2.16s steps(18) 1.5s forwards, 
+        cursor 2.16s steps(18) 2.5s forwards, 
         blink 1s linear infinite,
-        remove 3.66s step-end forwards;
+        remove 4.66s step-end forwards,
+        hidden 0s linear 1.5s forwards;
 }
 
 .name::before {
     background-color: rgb(249,250,251);
-    animation: cursor 0.84s steps(7) 3.66s forwards; 
+    animation: cursor 0.84s steps(7) 4.66s forwards; 
 }
 
 .name::after {
@@ -84,10 +86,10 @@
     background: black;
     visibility: hidden;
     animation: 
-        cursor 0.84s steps(7) 3.66s forwards, 
+        cursor 0.84s steps(7) 4.66s forwards, 
         blink 1s linear infinite,
-        remove 5.5s step-end forwards,
-        hidden 0s linear 3.66s forwards;
+        remove 6.5s step-end forwards,
+        hidden 0s linear 4.66s forwards;
 }
 
 
@@ -97,7 +99,7 @@
 
 .fullstack::before {
     background-color: rgb(249,250,251);
-    animation: cursor 2.04s steps(17) 5.5s forwards; 
+    animation: cursor 2.04s steps(17) 6.5s forwards; 
 }
 
 .fullstack::after {
@@ -105,15 +107,15 @@
     background: black;
     visibility: hidden;
     animation: 
-        cursor 2.04s steps(17) 5.5s forwards, 
+        cursor 2.04s steps(17) 6.5s forwards, 
         blink 1s linear infinite,
-        remove 7.54s step-end forwards,
-        hidden 0s linear 5.5s forwards;
+        remove 8.54s step-end forwards,
+        hidden 0s linear 6.5s forwards;
 }
 
 .engineer::before {
     background-color: rgb(249,250,251);
-    animation: cursor 0.96s steps(8) 7.54s forwards; 
+    animation: cursor 0.96s steps(8) 8.54s forwards; 
 }
 
 .engineer::after {
@@ -121,10 +123,10 @@
     background: black;
     visibility: hidden;
     animation: 
-        cursor 0.96s steps(8) 7.54s forwards, 
+        cursor 0.96s steps(8) 8.54s forwards, 
         blink 1s linear infinite,
-        remove 9.5s step-end forwards,
-        hidden 0s linear 7.54s forwards;
+        remove 10.5s step-end forwards,
+        hidden 0s linear 8.54s forwards;
 }
 
 
@@ -137,11 +139,11 @@
      opacity: 0;
    }
 }
-@keyframes reverseBlink {
+/* @keyframes reverseBlink {
     50% {
       opacity: 1;
     }
- }
+ } */
 @keyframes remove {
    to {
      opacity: 0;
