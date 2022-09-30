@@ -1,5 +1,6 @@
 .container {
-    width: 100vw;
+    /* width: 100vw; */
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,9 +36,6 @@
     animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards;
     font-size: 20px;
 }
-
-
-
 
 .about {
     opacity: 0;

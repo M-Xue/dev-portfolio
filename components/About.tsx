@@ -4,7 +4,9 @@ import styles from '../styles/About.module.css'
 
 export const About = () => {
   return (
-    <div></div>
+    <div>vbxcv
+      <br /><br /><br />
+    </div>
   )
 }
 
