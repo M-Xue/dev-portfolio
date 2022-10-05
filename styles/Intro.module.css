@@ -115,7 +115,7 @@
 
 .engineer::before {
     background-color: rgb(249,250,251);
-    animation: cursor 0.96s steps(8) 8.54s forwards; 
+    animation: cursor 1.08s steps(9) 8.54s forwards; 
 }
 
 .engineer::after {
@@ -123,7 +123,7 @@
     background: black;
     visibility: hidden;
     animation: 
-        cursor 0.96s steps(8) 8.54s forwards, 
+        cursor 1.08s steps(9) 8.54s forwards, 
         blink 1s linear infinite,
         remove 10.5s step-end forwards,
         hidden 0s linear 8.54s forwards;

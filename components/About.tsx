@@ -6,6 +6,9 @@ export const About = () => {
   return (
     <div>vbxcv
       <br /><br /><br />
+      <br /><br /><br />
+      <br /><br /><br />
+      <br /><br /><br />
     </div>
   )
 }
