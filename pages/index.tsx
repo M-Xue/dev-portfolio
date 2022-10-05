@@ -14,19 +14,15 @@ import { Topbar } from '../components/Topbar'
 import useOnScreen from '../hooks/useOnScreen'
 import styles from '../styles/Home.module.css'
 
+import { motion, AnimatePresence } from "framer-motion"
+
+
 
 const Home: NextPage = () => {
 
   const topbarRef = useRef<HTMLDivElement | null>(null);
   const isVisibleTopbar = useOnScreen(topbarRef);
-  // * have to use forwardRef or smth
 
-  // useEffect(() => {
-  //   console.log(topbarRef);
-  
-
-  // })
-  
 
   return (
     <>
@@ -38,20 +34,33 @@ const Home: NextPage = () => {
         <div className={styles.backgroundColour}></div>
 
         <Topbar ref={topbarRef}/>
-        {isVisibleTopbar && <LeftSiderbar/>}
 
+        <AnimatePresence
+          // initial={false}
+          // exitBeforeEnter={true}
+          // onExitComplete={()=>null}
+        >
+          {!isVisibleTopbar && (
+            <motion.div
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              exit={{opacity: 0}}
+              transition={{ duration: 0.3, ease: [0.645, 0.045, 0.355, 1]}}
+            >
+            <LeftSiderbar/>
+          </motion.div>
+          )}
+        </AnimatePresence>
+        
 
-
-        {/* <Topbar /> 
-        <LeftSiderbar/> */}
         <RightSidebar/>
         <main className={styles.main}>
           <Intro/>
           <About/>
-          {/* <Skills/>
-          <Projects/>
-          <Education/>
-          <Contact/> */}
+          {/* <Skills/> */}
+          {/* <Projects/> */}
+          {/* <Education/> */}
+          {/* <Contact/> */}
         </main>
 
         <footer className={styles.footer}>
