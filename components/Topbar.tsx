@@ -4,15 +4,6 @@ import styles from '../styles/Topbar.module.css'
 
 const Topbar = forwardRef<HTMLDivElement>(
   (props, ref) => {
-  
-    // const topbarRef = useRef<HTMLDivElement | null>(null)
-    // const isVisible = useOnScreen(topbarRef)
-  
-    // if (isVisible) {
-    //   console.log('visible');
-    // } else if (!isVisible) {
-    //   console.log('is not visible')
-    // }
     return (
       <div className={styles.container} ref={ref}>
           <div className={styles.logo}>MX</div>

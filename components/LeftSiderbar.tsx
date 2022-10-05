@@ -6,9 +6,9 @@ export const LeftSiderbar = () => {
   return (
     <motion.div 
       className={styles.container}
-      initial={{ opacity: 0, y: '4px' }}
+      initial={{ opacity: 0, y: '8px' }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: '4px' }}
+      exit={{ opacity: 0, y: '8px' }}
       transition={{ duration: 0.5, ease: [0.645, 0.045, 0.355, 1]}}
     >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
