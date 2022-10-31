@@ -42,11 +42,17 @@ const Home: NextPage = () => {
         <RightSidebar/>
 
         <main className={styles.main}>
+
+          {/* https://www.youtube.com/watch?v=9eMp8l4WEpE
+              ^^ WATCH THIS V IMPORTANT
+          */}
+
+
           <Intro/>
           <About/>
           {/* <Skills/> */}
           {/* <Projects/> */}
-          {/* <Education/> */}
+          <Education/>
           {/* <Contact/> */}
         </main>
 
@@ -68,3 +74,10 @@ export default Home
 // Content width: 1200px
 
 // Should embed prosemirror editor, google doc and messenger project in the page
+
+
+// https://brittanychiang.com/
+// https://tamalsen.dev/
+// https://github.com/features/copilot
+// https://iuri.is/
+// https://www.codewonders.dev/about
