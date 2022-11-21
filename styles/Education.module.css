@@ -27,3 +27,76 @@
     justify-content: center;
 }
 
+
+
+.educationPageButton {
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(9,30,66,0.25),0 0 1px 1px rgba(9,30,66,0.13);
+    display: inline-block;
+    /* width: initial; */
+    height: fit-content;
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    background:none;
+    border:none;
+
+    padding: 3px 10px;
+
+    font-size: 16px;
+    letter-spacing: -0.014px;
+    line-height: 30px;
+    
+    cursor: pointer;
+    user-select: none;
+
+
+}
+
+.box {
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(9,30,66,0.25),0 0 1px 1px rgba(9,30,66,0.13);
+    border-radius: 3px;
+
+    width: initial;
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.MyClassEnter {
+    /* opacity: 0; */
+    height: 0;
+    width: 0;
+}
+.MyClassEnterActive {
+    opacity: 1;
+    height: fit-content;
+    /* width: fit-content;  */
+    width: 100%;
+    /* height: 300px; */
+    transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
+}
+/* .MyClassEnterDone {
+    opacity: 1;
+} */
+.MyClassExit {
+    opacity: 1;
+    height: fit-content;
+    /* width: fit-content; */
+    width: 100%;
+    /* height: 300px; */
+}
+.MyClassExitActive {
+    /* opacity: 0; */
+    height: 0;
+    width: 0;
+    transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
+}
+
+.text {
+    padding: 20px 30px;
+}
