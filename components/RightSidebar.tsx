@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/RightSidebar.module.css'
+import styles from '../styles/components/RightSidebar.module.css'
 
 
 export const RightSidebar = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/EducationPage.module.css'
+import styles from '../../../styles/sections/education/EducationPage.module.css'
 import { motion, AnimatePresence } from "framer-motion"
 import { EducationExperience } from './EducationExperience'
 import { CSSTransition } from 'react-transition-group'

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/LeftSidebar.module.css'
+import styles from '../styles/components/LeftSidebar.module.css'
 import { motion, AnimatePresence } from "framer-motion"
 
 export const LeftSiderbar = () => {

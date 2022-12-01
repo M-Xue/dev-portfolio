@@ -55,6 +55,83 @@
 
 }
 
+
+
+.testContainer {
+    position: relative;
+    margin-top: 50px;
+}
+
+.expand {
+    /* height: 300px;
+    width: 100%; */
+
+    height: 40px;
+    width: 40px;
+    background: yellow;
+    position: absolute;
+}
+
+
+
+
+.MyClassEnter {
+    height: 40px;
+    width: 40px;
+}
+.MyClassEnterActive {
+    opacity: 1;
+    height: 100%;
+    /* width: fit-content;  */
+    width: 100%;
+    /* height: 300px; */
+    transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
+}
+.MyClassEnterDone {
+    height: 100%;
+    width: 100%;
+}
+.MyClassExit {
+    opacity: 1;
+    height: 100%;
+    /* width: fit-content; */
+    width: 100%;
+    /* height: 300px; */
+}
+.MyClassExitActive {
+    /* opacity: 0; */
+    height: 40px;
+    width: 40px;
+    transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
+}
+
+
+
+
+
+.bigBoi {
+    /* min-height: 700px; */
+    background-color: red;
+    z-index: -99;
+    width: 100%;
+    position:relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .box {
     background-color: white;
     box-shadow: 0 1px 1px rgba(9,30,66,0.25),0 0 1px 1px rgba(9,30,66,0.13);
@@ -67,36 +144,56 @@
 }
 
 
-.MyClassEnter {
-    /* opacity: 0; */
+
+
+.text {
+    padding: 20px 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .MyClassEnter {
+    opacity: 0;
     height: 0;
     width: 0;
 }
 .MyClassEnterActive {
     opacity: 1;
     height: fit-content;
-    /* width: fit-content;  */
+    width: fit-content; 
     width: 100%;
-    /* height: 300px; */
+    height: 300px;
     transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
 }
-/* .MyClassEnterDone {
+.MyClassEnterDone {
     opacity: 1;
-} */
+}
 .MyClassExit {
     opacity: 1;
     height: fit-content;
-    /* width: fit-content; */
+    width: fit-content;
     width: 100%;
-    /* height: 300px; */
+    height: 300px;
 }
 .MyClassExitActive {
-    /* opacity: 0; */
+    opacity: 0;
     height: 0;
     width: 0;
     transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
-}
-
-.text {
-    padding: 20px 30px;
-}
+} */

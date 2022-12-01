@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/TabList.module.css';
+import styles from '../styles/components/TabList.module.css';
 
 
 const tabInfo = [

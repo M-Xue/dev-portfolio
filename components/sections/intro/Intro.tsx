@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/Intro.module.css'
+import styles from '../../../styles/sections/intro/Intro.module.css'
 
 
 export const Intro = () => {
