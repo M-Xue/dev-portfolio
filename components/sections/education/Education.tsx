@@ -3,6 +3,29 @@ import styles from '../../../styles/sections/education/Education.module.css'
 import { EducationPage } from './EducationPage';
 import { TabList } from '../../TabList';
 import { CSSTransition } from 'react-transition-group'
+import { motion } from 'framer-motion'
+
+
+const dropIn = {
+  hidden: {
+    y: "-100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      type: "ease-in",
+      damping: 25,
+      stiffness: 500,
+    }
+  },
+  exit: {
+    y: "-100vh",
+    opacity: 0,
+  }
+}
 
 
 export const Education = () => {
@@ -34,44 +57,38 @@ export const Education = () => {
 
           
 
-          <CSSTransition
-            in={isContentOpen}
-            nodeRef={backdropRef}
-            timeout={1000} 
-            unmountOnExit
-            classNames={{
-              enter: styles.backdropEnter,
-              enterActive: styles.backdropEnterActive,
-              enterDone: styles.backdropEnterDone,
-              exit: styles.backdropExit,
-              exitActive: styles.backdropExitActive
-            }}
-          >
-            <div className={styles.backdrop} onClick={()=>setIsContentOpen(false)} ref={backdropRef}>
-              <CSSTransition
-                in={isContentOpen}
-                nodeRef={eduModalRef}
-                timeout={1000} 
-                unmountOnExit
-                classNames={{
-                  enter: styles.eduModalEnter,
-                  enterActive: styles.eduModalEnterActive,
-                  enterDone: styles.eduModalEnterDone,
-                  exit: styles.eduModalExit,
-                  exitActive: styles.eduModalExitActive
-                }}
+          {isContentOpen
+            &&
+            <motion.div
+              className={styles.backdrop} 
+              onClick={()=>setIsContentOpen(false)}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              exit={{opacity: 0}}
+            >
+
+              <motion.div 
+                className={styles.eduModal} 
+                onClick={(e)=>e.stopPropagation()}
+                variants={dropIn}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
               >
-                <div className={styles.eduModal} ref={eduModalRef}>
-                    <p>
-                      Beginning my Computer Science degree in September 2020, I developed a passion for software development learning the fundementals of programming. As my first term progressed, I developed a sense of pride looking back at the work I had completed and how I had created programs I could never have even imagined a few months prior. However, I knew this was just the beginning and developed a curiosity for what more I could create, diving into online free tutorials and ending up in the world of web applications, learning fullstack development with the MERN stack, as well as experimenting with mobile development with Swift.
-                      This curiosity has stayed with me to this day as I strive to develop as a developer, learning new technologies to create more powerful and enjoyable experiences for users, both in streamlining performance for both backend and frontend as well as attempting to learn best practices to write clean and elegant code that is flexible, maintainable and extensible. 
-                      As I progressed on my self-learning journey, I decided to join the UNSW Education Subcomittee in 2022 to share all the knowledge I had learnt in order to help other students overcome the struggles I faced trying to teach myself as I did not have many people to talk to about web application development since it is not a topic well covered by the UNSW Computer Science degree curriculum and there is an information overload online when you don't know what you are looking for. Here, I found many people as passionate as I am about software development and not only achieved my goals of helping other students but also experienced so much personal growth both as an individual and as a software developer.  
-                      Inspired by my team and my directors, I applied and assumed the position of Education/Development Executive of CSESoc 2023, where I oversee 5 subcomittees dedicated to the growth and support of the developer community at UNSW. I hope to cultivate a developer community that thrives on the curiosity of passionate students and support students to achieve their goals as software developers by making information accessible as well as creating opportunities for students to bond with like-minded students so we can all developer and grow from each other, leveraging our unique experience and knowledge. 
-                    </p>
-                </div>
-              </CSSTransition>
-            </div>
-          </CSSTransition>
+                <p>
+                  Beginning my Computer Science degree in September 2020, I developed a passion for software development learning the fundementals of programming. As my first term progressed, I developed a sense of pride looking back at the work I had completed and how I had created programs I could never have even imagined a few months prior. However, I knew this was just the beginning and developed a curiosity for what more I could create, diving into online free tutorials and ending up in the world of web applications, learning fullstack development with the MERN stack, as well as experimenting with mobile development with Swift.
+                  This curiosity has stayed with me to this day as I strive to develop as a developer, learning new technologies to create more powerful and enjoyable experiences for users, both in streamlining performance for both backend and frontend as well as attempting to learn best practices to write clean and elegant code that is flexible, maintainable and extensible. 
+                  As I progressed on my self-learning journey, I decided to join the UNSW Education Subcomittee in 2022 to share all the knowledge I had learnt in order to help other students overcome the struggles I faced trying to teach myself as I did not have many people to talk to about web application development since it is not a topic well covered by the UNSW Computer Science degree curriculum and there is an information overload online when you don't know what you are looking for. Here, I found many people as passionate as I am about software development and not only achieved my goals of helping other students but also experienced so much personal growth both as an individual and as a software developer.  
+                  Inspired by my team and my directors, I applied and assumed the position of Education/Development Executive of CSESoc 2023, where I oversee 5 subcomittees dedicated to the growth and support of the developer community at UNSW. I hope to cultivate a developer community that thrives on the curiosity of passionate students and support students to achieve their goals as software developers by making information accessible as well as creating opportunities for students to bond with like-minded students so we can all developer and grow from each other, leveraging our unique experience and knowledge. 
+                </p>
+              </motion.div>  
+
+
+            </motion.div>
+          }
+
+                
+
 
 
           

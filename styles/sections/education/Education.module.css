@@ -74,28 +74,6 @@
     align-items: center;
 }
 
-.backdropEnter {
-    opacity: 0;
-}
-.backdropEnterActive {
-    opacity: 1;
-    transition: opacity 100ms ease-in;
-}
-.backdropEnterDone {
-    opacity: 1;
-}
-.backdropExit {
-    opacity: 1;
-}
-.backdropExitActive {
-    opacity: 0;
-    transition: opacity 100ms ease-in;
-}
-
-
-
-
-
 
 
 
@@ -108,41 +86,6 @@
     padding: 20px 30px;
 
     width: min(90%, 1200px);
-
-    /* position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-}
-
-
-
-.eduModalEnter {
-    opacity: 0;
-    transform: translateY(-20px);
-}
-.eduModalEnterActive {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1000ms ease-in, transform 1000ms ease-in;
-}
-.eduModalEnterDone {
-    opacity: 1;
-    transform: translateY(0);
-}
-.eduModalExit {
-    opacity: 1;
-    transform: translateY(0);
-}
-.eduModalExitActive {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 1000ms ease-in, transform 1000ms ease-in;
 }
 
 
@@ -155,41 +98,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-/* .MyClassEnter {
-    opacity: 0;
-    height: 0;
-    width: 0;
-}
-.MyClassEnterActive {
-    opacity: 1;
-    height: fit-content;
-    width: fit-content; 
-    width: 100%;
-    height: 300px;
-    transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
-}
-.MyClassEnterDone {
-    opacity: 1;
-}
-.MyClassExit {
-    opacity: 1;
-    height: fit-content;
-    width: fit-content;
-    width: 100%;
-    height: 300px;
-}
-.MyClassExitActive {
-    opacity: 0;
-    height: 0;
-    width: 0;
-    transition: opacity 1000ms ease-in, height 1000ms ease-in, width 1000ms ease-in;
-} */
