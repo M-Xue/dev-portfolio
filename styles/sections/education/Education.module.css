@@ -59,81 +59,37 @@
 
 
 
-
-
-
-
-.testContainer {
-    position: relative;
-    margin-top: 50px;
-}
-
-.expand {
-
-    height: 40px;
-    width: 40px;
-    background: yellow;
-    /* position: relative; */
-    /* z-index: 999; */
-    position: absolute;
-}
-.MyClassEnter {
-    height: 40px;
-    width: 40px;
-}
-.MyClassEnterActive {
+.backdrop {
+    width: 100%;
     height: 100%;
-    width: 100%;
-    transition: height 1000ms ease-in, width 1000ms ease-in;
-}
-.MyClassEnterDone {
-    height: 100%;
-    width: 100%;
-}
-.MyClassExit {
-    height: 100%;
-    width: 100%;
-}
-.MyClassExitActive {
-    height: 40px;
-    width: 40px;
-    transition: height 1000ms ease-in, width 1000ms ease-in;
+    background-color: rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-.bigBoi {
-    width: 100%;
-    /* position: relative;
-    z-index: -999; */
-    /* position: absolute; */
-}
-
-
-
-.text {
-    padding: 20px 30px;
-    opacity: 0;
-    position: relative;
-}
-.TextEnter {
+.backdropEnter {
     opacity: 0;
 }
-.TextEnterActive {
+.backdropEnterActive {
     opacity: 1;
-    transition: opacity 1000ms ease-in 1000ms;
+    transition: opacity 100ms ease-in;
 }
-.TextEnterDone {
-    opacity: 1;
-}
-.TextExit {
+.backdropEnterDone {
     opacity: 1;
 }
-.TextExitActive {
+.backdropExit {
+    opacity: 1;
+}
+.backdropExitActive {
     opacity: 0;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 100ms ease-in;
 }
 
 
@@ -145,21 +101,49 @@
 
 
 
-
-.box {
+.eduModal {
     background-color: white;
     box-shadow: 0 1px 1px rgba(9,30,66,0.25),0 0 1px 1px rgba(9,30,66,0.13);
     border-radius: 3px;
+    padding: 20px 30px;
 
-    width: initial;
-    height: 300px;
+    width: min(90%, 1200px);
 
-    overflow: hidden;
+    /* position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 
 
-
+.eduModalEnter {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.eduModalEnterActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1000ms ease-in, transform 1000ms ease-in;
+}
+.eduModalEnterDone {
+    opacity: 1;
+    transform: translateY(0);
+}
+.eduModalExit {
+    opacity: 1;
+    transform: translateY(0);
+}
+.eduModalExitActive {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1000ms ease-in, transform 1000ms ease-in;
+}
 
 
 
