@@ -1,0 +1,86 @@
+.container {
+    padding: 10px 15px;
+    background: rgb(255,255,255);
+
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+
+    transition: transform 200ms ease-out;
+
+    width: 32.5%;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* .container:hover {
+    transform: translateY(-5px);
+} */
+
+
+.content {
+    margin-bottom: 20px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.repoContainer svg {
+    padding: 4px;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    /* transition: background-color 100ms ease-in; */
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+.repoContainer svg:hover {
+    background-color: rgb(230, 229, 229);
+}
+
+.title {
+    margin-bottom: 15px;
+    /* height: 46px; */
+}
+
+.description {
+    margin-bottom: 15px;
+}
+
+.technologiesList {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row-reverse; */
+}
+.technologiesList li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: rgb(138, 143, 152);
+    background-color: rgb(230, 229, 229);
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+    font-size: 13px;
+}
+
+
+.assignments {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.assignments li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: rgb(138, 143, 152);
+    background-color: rgb(230, 229, 229);
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: Consolas,Menlo,"courier new",monospace;
+}
