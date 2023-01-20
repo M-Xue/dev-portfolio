@@ -9,12 +9,15 @@
 }
 
 .container svg {
-    margin-bottom: 15px;
+    margin-bottom: 11px;
+    padding-top: 4px;
     transition: 0.15s;
 }
 
 .container svg:hover {
-    transform: translate(0, -4px);
+    /* transform: translate(0, -4px); */
+    padding-top: 0;
+    padding-bottom: 4px;
     cursor: pointer;
     color: #682AE9;
 }
