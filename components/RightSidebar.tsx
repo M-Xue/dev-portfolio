@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover'
 import styles from '../styles/components/RightSidebar.module.css'
@@ -8,6 +8,39 @@ export const RightSidebar = () => {
   const [emailIconRef, isHovered] = useHover<HTMLDivElement | null>();
   const [tooltipPopupRef, isTooltipHovered] = useHover<HTMLDivElement | null>();
   const tooltipRef = useRef<null | HTMLDivElement>(null);
+  const [recentlyCopied, setRecentlyCopied] = useState<boolean>(false);
+  const copyIconTimeout = useRef<any>(null);
+
+  const handleClipboardCopyClick = async (e) => {
+    setRecentlyCopied(true);
+
+    if (copyIconTimeout.current === null) {
+      copyIconTimeout.current = setTimeout(() => {
+        setRecentlyCopied(false);
+        copyIconTimeout.current = null;
+      }, 2500);
+    } else {
+      clearTimeout(copyIconTimeout.current);
+      copyIconTimeout.current = setTimeout(() => {
+        setRecentlyCopied(false);
+        copyIconTimeout.current = null;
+      }, 2500);
+    }
+
+    try {
+      await navigator.clipboard.writeText("maxxue2018@hotmail.com");
+    } catch (error) {
+      console.warn('Copy failed', error)
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      if (copyIconTimeout.current) 
+        clearTimeout(copyIconTimeout.current);
+    }
+  }, [])
+  
 
   return (
     <div className={styles.container}>
@@ -35,6 +68,15 @@ export const RightSidebar = () => {
             <div className={styles.tooltipContainer} ref={(e) => {tooltipRef.current = e; tooltipPopupRef(e);}}>
               <div className={styles.tooltipBox}>
                 maxxue2018@hotmail.com
+                <div className={styles.clipboardIcon} onClick={handleClipboardCopyClick}> {/* https://iconoir.com/ */}
+                  {
+                    !recentlyCopied 
+                    ?
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M8.5 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path><path d="M8 6.4V4.5a.5.5 0 01.5-.5c.276 0 .504-.224.552-.496C9.2 2.652 9.774 1 12 1s2.8 1.652 2.948 2.504c.048.272.276.496.552.496a.5.5 0 01.5.5v1.9a.6.6 0 01-.6.6H8.6a.6.6 0 01-.6-.6z" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                    :
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M8.5 4H6a2 2 0 00-2 2v14a2 2 0 002 2h6M15.5 4H18a2 2 0 012 2v9" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path><path d="M8 6.4V4.5a.5.5 0 01.5-.5c.276 0 .504-.224.552-.496C9.2 2.652 9.774 1 12 1s2.8 1.652 2.948 2.504c.048.272.276.496.552.496a.5.5 0 01.5.5v1.9a.6.6 0 01-.6.6H8.6a.6.6 0 01-.6-.6z" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path><path d="M15.5 20.5l2 2 5-5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  }
+                </div>
               </div>
             </div>
           </CSSTransition>
