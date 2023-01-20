@@ -11,20 +11,29 @@
     transform: translateY(10px);
     animation: dropInUp 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards
 }
+    /* color: #0F1B61; */
 
+
+/* https://stackoverflow.com/questions/24626908/how-to-get-rid-of-extra-space-below-svg-in-div-element */
 .container svg {
+    display: block;
+}
+
+.emailIcon {
+    position: relative; /* Makes the tooltip's nearest positioned ancestor this container */
+}
+
+.container a, .emailIcon {
     margin-bottom: 15px;
     transition: 0.15s;
-    /* color: #0F1B61; */
     color: black;
 }
 
-.container svg:hover {
+.container a:hover, .emailIcon:hover {
     transform: translate(0, -4px);
+    /* padding-bottom: 4px; */
     cursor: pointer;
-    /* color: rgb(255, 28, 247); */
     color: #682AE9;
-    /* color: linear-gradient(rgb(255, 28, 247) 25%, rgb(178, 73, 248) 100%); */
 }
 
 .vertLine {
@@ -39,4 +48,37 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.tooltipContainer {
+    position: absolute;
+    top: -10.5px;
+    left: -260px;
+    opacity: 0;
+    padding-right: 10px;
+}
+.tooltipEnter {
+    opacity: 0;
+}
+.tooltipEnterActive {
+    transition: all 150ms ease-out;
+    opacity: 1;
+}
+.tooltipEnterDone {
+    opacity: 1;
+}
+.tooltipExit {
+    opacity: 1;
+}
+.tooltipExitActive {
+    transition: all 150ms ease-out;
+    opacity: 0;
+}
+
+.tooltipBox {
+    padding: 12.5px 25px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
 }

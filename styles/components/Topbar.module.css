@@ -19,6 +19,14 @@
     margin-right: 40px;
     display: flex;
     align-items: center;
+    /* padding: 7.5px 10px;
+    border-radius: 5px;
+    transition: all 100ms linear;  */
+}
+
+.navigation a:hover {
+    /* background-color: rgb(230, 229, 229); */
+    /* Change this to expanding underline */
 }
 
 .navigation svg {
@@ -43,35 +51,44 @@
     animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards;
 }
 
-.skills {
+.work {
     opacity: 0;
     transform: translateY(-10px);
     animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.15s forwards;
 }
 
-.projects {
+.education {
     opacity: 0;
     transform: translateY(-10px);
     animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s forwards;
 }
 
-.education {
+.contact {
     opacity: 0;
     transform: translateY(-10px);
     animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.35s forwards;
 }
 
-.contact {
+.resume {
     opacity: 0;
     transform: translateY(-10px);
     animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.45s forwards;
 }
 
-.resume {
+
+
+/* .skills {
     opacity: 0;
     transform: translateY(-10px);
-    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.55s forwards;
-}
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.15s forwards;
+} */
+
+/* .projects {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s forwards;
+} */
+
 
 
 
