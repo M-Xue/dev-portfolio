@@ -15,6 +15,7 @@ import useOnScreen from '../hooks/useOnScreen'
 import styles from '../styles/Home.module.css'
 
 import { motion, AnimatePresence } from "framer-motion"
+import { WorkExperience } from '../components/sections/workExperience/WorkExperience'
 
 
 
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
           <Intro/>
           <About/>
           {/* <Skills/> */}
+          <WorkExperience/>
           {/* <Projects/> */}
           <Education/>
           {/* <Contact/> */}
