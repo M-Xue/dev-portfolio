@@ -8,19 +8,29 @@
     margin: 0 50.25px;
 }
 
+/* https://stackoverflow.com/questions/24626908/how-to-get-rid-of-extra-space-below-svg-in-div-element */
 .container svg {
+    display: block;
+}
+
+.iconContainer {
     margin-bottom: 11px;
     padding-top: 4px;
     transition: 0.15s;
 }
 
-.container svg:hover {
+.fileTextIcon {
+    margin-bottom: 15px;
+}
+
+.iconContainer:hover {
     /* transform: translate(0, -4px); */
     padding-top: 0;
     padding-bottom: 4px;
     cursor: pointer;
     color: #682AE9;
 }
+
 
 .vertLine {
     width: 2px;
