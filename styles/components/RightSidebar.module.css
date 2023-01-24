@@ -3,23 +3,21 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
-    bottom: 0;
+    bottom: -10px; 
+    /* bottom: 0; */
     right: 0;
     margin: 0 50.25px;
 
     opacity: 0;
-    transform: translateY(10px);
+    /* transform: translateY(10px);  */
+    /* The transform above messes with fixed. Using bottom -10px instead. Check in the keyframe class below too */
     animation: dropInUp 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards
 }
-    /* color: #0F1B61; */
-
 
 /* https://stackoverflow.com/questions/24626908/how-to-get-rid-of-extra-space-below-svg-in-div-element */
 .container svg {
     display: block;
 }
-
-
 
 .container a, .emailIcon {
     margin-bottom: 11px;
@@ -46,12 +44,6 @@
     border-radius: 50px;
 }
 
-@keyframes dropInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .tooltipContainer {
     position: absolute;
@@ -113,3 +105,99 @@
     width: 24px;
     height: 24px;
 }
+
+.toastContainer {
+    background-color: white;
+    box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px;
+    border-radius: 6px;
+
+    width: max-content;
+    padding: 15px;
+    margin: 25px;
+
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+    user-select: none;
+}
+
+.toastContainer span {
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: rgb(17, 24, 28);
+    font-size: 15px;
+}
+
+.toastEnter {
+    transform: translate(400px);
+}
+.toastEnterActive {
+    transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate(0);
+}
+.toastEnterDone {
+    transform: translate(0);
+}
+.toastExit {
+    opacity: 1;
+}
+.toastExitActive{
+    transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+
+
+
+@keyframes dropInUp {
+    to {
+        opacity: 1;
+        bottom: 0px;
+        /* transform: translateY(0); */
+        /* The transform above messes with fixed. Using bottom: 0 instead. Check in the container class too */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* element {
+
+    user-select: none;
+    touch-action: none;
+
+}
+.c-iAYjxR[data-state="open"] {
+
+    animation: 150ms cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal none running k-bsLFrQ;
+
+}
+.c-iAYjxR {
+
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px;
+    padding: 15px;
+    display: grid;
+    grid-template-areas:
+    "title       action" 
+    "description action";
+    grid-template-columns: auto max-content;
+    column-gap: 15px;
+    align-items: center;
+
+} */

@@ -35,7 +35,7 @@ export const TabList = () => {
             <div className={styles.tabs}>
                 {
                     teams.map((team, idx) => 
-                        <div key={team.name} className={currTab === idx ? styles.tabName + " " + styles.tabNameActive : styles.tabName + " " + styles.tabNameInactive} onClick={() => setCurrTab(idx)}>{team.name}</div>
+                        <div key={team.name} className={currTab === idx ? styles.tabName + " " + styles.tabNameActive : styles.tabName + " " + styles.tabNameInactive} onClick={() => setCurrTab(idx)}><span>{team.name}</span></div>
                     )
                 }
             </div>

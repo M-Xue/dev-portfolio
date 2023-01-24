@@ -108,6 +108,7 @@
     padding: 3px 5px;
     border-radius: 3px;
     font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+    /* font-family: 'Space Mono', 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;; */
     font-size: 13px;
 }
 
