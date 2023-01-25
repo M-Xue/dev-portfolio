@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import useHover from '../hooks/useHover';
 import styles from '../styles/components/LeftSidebar.module.css';
 import { motion, AnimatePresence } from "framer-motion";
 import { IconTooltipWrapper } from './IconTooltipWrapper';
 
 export const LeftSidebar = () => {
+  const [resumeIconRef, isResumeIconHovered] = useHover<HTMLDivElement | null>();
+  const [resumeTooltipPopupRef, isResumeTooltipHovered] = useHover<HTMLDivElement | null>();
+  const resumeTooltipRef = useRef<null | HTMLDivElement>(null);
+
+
   return (
     <motion.div 
       className={styles.container}
@@ -21,7 +28,34 @@ export const LeftSidebar = () => {
       <IconTooltipWrapper tooltip={"Education"} position={"left"}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
       </IconTooltipWrapper>
-      <div className={styles.fileTextIcon}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+      <div className={styles.fileTextIcon} ref={resumeIconRef}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <CSSTransition
+          in={isResumeIconHovered || isResumeTooltipHovered}
+          nodeRef={resumeTooltipRef}
+          timeout={150} 
+          unmountOnExit
+          classNames={{
+            enter: styles.tooltipEnter,
+            enterActive: styles.tooltipEnterActive,
+            enterDone: styles.tooltipEnterDone,
+            exit: styles.tooltipExit,
+            exitActive: styles.tooltipExitActive
+          }}
+        >
+          <div className={styles.tooltipContainer} ref={(e) => {resumeTooltipRef.current = e; resumeTooltipPopupRef(e);}}>
+            <div className={styles.tooltipBox}>
+              <span>Download Resume</span>
+              <div className={styles.downloadIcon} > 
+                {/* https://iconoir.com/ */}
+                <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M6 20h12M12 4v12m0 0l3.5-3.5M12 16l-3.5-3.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+            </div>
+          </div>
+        </CSSTransition>
+
+        
+      </div>
 
       <div className={styles.vertLine}></div>
     </motion.div>

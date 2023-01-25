@@ -49,6 +49,7 @@
     left: -300px;
     opacity: 0;
     padding-right: 20px;
+    cursor: default;
 }
 .tooltipEnter {
     opacity: 0;
@@ -89,6 +90,7 @@
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 4px;
     transition: all 100ms ease-in;
+    cursor: pointer;
 }
 
 .clipboardIcon:hover {
