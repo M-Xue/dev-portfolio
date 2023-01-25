@@ -64,35 +64,3 @@
     top: -10.5px;
 }
 
-.tooltipBox {
-    padding: 10px 15px 10px 20px;
-    border-radius: 8px;
-    background-color: white;
-    color: black;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.downloadIcon {
-    padding: 5px;
-    margin-left: 12px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-    transition: all 100ms ease-in;
-    cursor: pointer;
-}
-
-.downloadIcon:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.downloadIcon:active {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.downloadIcon svg {
-    width: 24px;
-    height: 24px;
-}
