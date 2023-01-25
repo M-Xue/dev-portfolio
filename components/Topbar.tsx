@@ -1,8 +1,8 @@
 import React, { forwardRef, useRef } from 'react'
 import useOnScreen from '../hooks/useOnScreen'
-import styles from '../styles/components/Topbar.module.css'
+import styles from '../styles/components/TopBar.module.css'
 
-const Topbar = forwardRef<HTMLDivElement>(
+const TopBar = forwardRef<HTMLDivElement>(
   (props, ref) => {
     return (
       <div className={styles.container} ref={ref}>
@@ -60,5 +60,5 @@ const Topbar = forwardRef<HTMLDivElement>(
   
 )
 
-Topbar.displayName='Topbar';
-export {Topbar};
+TopBar.displayName='TopBar';
+export {TopBar};

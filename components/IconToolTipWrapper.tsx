@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover'
-import styles from '../styles/components/IconToolTipWrapper.module.css'
+import styles from '../styles/components/IconTooltipWrapper.module.css'
 
 interface Props {
     children: JSX.Element,
@@ -9,7 +9,7 @@ interface Props {
     position: "left" | "right",
 }
 
-export const IconToolTipWrapper = ({children, tooltip, position}:Props) => {
+export const IconTooltipWrapper = ({children, tooltip, position}:Props) => {
     const [iconRef, isHovered] = useHover<HTMLDivElement | null>();
     const tooltipRef = useRef<HTMLDivElement | null>(null);
     return (

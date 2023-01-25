@@ -6,11 +6,11 @@ import { About } from '../components/sections/about/About'
 import { Contact } from '../components/sections/contact/Contact'
 import { Education } from '../components/sections/education/Education'
 import { Intro } from '../components/sections/intro/Intro'
-import { LeftSiderbar } from '../components/LeftSiderbar'
+import { LeftSidebar } from '../components/LeftSidebar'
 import { Projects } from '../components/sections/projects/Projects'
 import { RightSidebar } from '../components/RightSidebar'
 import { Skills } from '../components/Skills'
-import { Topbar } from '../components/Topbar'
+import { TopBar } from '../components/TopBar'
 import useOnScreen from '../hooks/useOnScreen'
 import styles from '../styles/Home.module.css'
 
@@ -21,8 +21,8 @@ import { WorkExperience } from '../components/sections/workExperience/WorkExperi
 
 const Home: NextPage = () => {
 
-  const topbarRef = useRef<HTMLDivElement | null>(null);
-  const isVisibleTopbar = useOnScreen(topbarRef);
+  const topBarRef = useRef<HTMLDivElement | null>(null);
+  const isVisibleTopBar = useOnScreen(topBarRef);
 
 
   return (
@@ -34,11 +34,11 @@ const Home: NextPage = () => {
       <div className={styles.background}></div>
       <div className={styles.container}>
 
-        <Topbar ref={topbarRef}/>
+        <TopBar ref={topBarRef}/>
 
         <AnimatePresence>
-          {!isVisibleTopbar && 
-            <LeftSiderbar/>
+          {!isVisibleTopBar && 
+            <LeftSidebar/>
           }
         </AnimatePresence>
         <RightSidebar/>
