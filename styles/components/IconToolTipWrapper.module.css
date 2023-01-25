@@ -1,11 +1,25 @@
+.iconContainer {
+    position: relative;
+    margin-bottom: 11px;
+    padding-top: 4px;
+    transition: 0.15s;
+}
 
+.iconContainer:hover {
+    /* transform: translate(0, -4px); */
+    padding-top: 0;
+    padding-bottom: 4px;
+    cursor: pointer;
+    color: #682AE9;
+}
 
 
 
 .tooltip {
     position: absolute;
     bottom: 0px;
-    left: 40px;
+    
+    pointer-events: none;
 
     background-color: white;
     color: black;

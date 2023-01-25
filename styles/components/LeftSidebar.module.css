@@ -13,25 +13,19 @@
     display: block;
 }
 
-.iconContainer {
+.fileTextIcon {
     position: relative;
     margin-bottom: 11px;
     padding-top: 4px;
     transition: 0.15s;
 }
 
-.fileTextIcon {
-    margin-bottom: 15px;
-}
-
-.iconContainer:hover {
-    /* transform: translate(0, -4px); */
+.fileTextIcon:hover {
     padding-top: 0;
     padding-bottom: 4px;
     cursor: pointer;
     color: #682AE9;
 }
-
 
 .vertLine {
     width: 2px;
@@ -39,31 +33,3 @@
     height: 10vh;
     border-radius: 50px;
 }
-
-
-
-
-/* @keyframes dropInUp {
-    to {
-        display: initial;
-        transform: translateY(0);
-    }
-} */
-
-
-
-
-
-
-
-    /* color: #0F1B61; */
-
-    /* color: rgb(255, 28, 247); */
-    /* color: linear-gradient(rgb(255, 28, 247) 25%, rgb(178, 73, 248) 100%); */
-
-
-
-
-    /* transform: translateY(10px);
-    display: none;
-    animation: dropInUp 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards; */

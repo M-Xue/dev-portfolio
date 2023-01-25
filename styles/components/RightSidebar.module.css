@@ -19,17 +19,15 @@
     display: block;
 }
 
-.container a, .emailIcon {
+.emailIcon {
+    position: relative; /* Makes the tooltip's nearest positioned ancestor this container */
     margin-bottom: 11px;
     padding-top: 4px;
     transition: 0.15s;
     color: black;
 }
-.emailIcon {
-    position: relative; /* Makes the tooltip's nearest positioned ancestor this container */
-    margin-bottom: 15px;
-}
-.container a:hover, .emailIcon:hover {
+
+.emailIcon:hover {
     /* transform: translate(0, -4px); */
     padding-top: 0;
     padding-bottom: 4px;

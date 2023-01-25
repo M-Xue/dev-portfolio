@@ -3,15 +3,17 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover'
 import styles from '../styles/components/IconToolTipWrapper.module.css'
 
-// interface Props {
-//     Child
-// }
+interface Props {
+    children: JSX.Element,
+    tooltip: string,
+    position: "left" | "right",
+}
 
-export const IconToolTipWrapper = ({children, tooltip}) => {
+export const IconToolTipWrapper = ({children, tooltip, position}:Props) => {
     const [iconRef, isHovered] = useHover<HTMLDivElement | null>();
     const tooltipRef = useRef<HTMLDivElement | null>(null);
     return (
-        <div className={styles.container} ref={iconRef}>
+        <div className={styles.iconContainer} ref={iconRef}>
             {children}
             <CSSTransition
                 in={isHovered}
@@ -26,7 +28,7 @@ export const IconToolTipWrapper = ({children, tooltip}) => {
                     exitActive: styles.tooltipExitActive
                 }}
             >
-                <div className={styles.tooltip} ref={tooltipRef}>{tooltip}</div>
+                <div className={styles.tooltip} ref={tooltipRef} style={position === "left" ? {left: "40px"} : {right: "40px"}}>{tooltip}</div>
             </CSSTransition>
         </div>
     )
