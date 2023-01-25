@@ -114,7 +114,7 @@ export const RightSidebar = () => {
       <CSSTransition
         in={isToastActive || isToastHovered}
         nodeRef={toastRef}
-        timeout={150} 
+        timeout={500} 
         unmountOnExit
         classNames={{
           enter: styles.toastEnter,

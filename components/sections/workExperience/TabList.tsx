@@ -22,7 +22,10 @@ const teams = [
     {
         name: "Features Team",
         activities: [
-            "Created features"
+            "Created features",
+            "Testing",
+            "Code Review",
+            "TypeScript and React"
         ]
     }
 ];

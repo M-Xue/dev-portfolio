@@ -1,0 +1,44 @@
+
+
+
+
+.tooltip {
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 4px;
+    backdrop-filter: blur(12px) saturate(190%) contrast(50%) brightness(130%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(223, 225, 228);
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.098);
+
+    font-size: 0.8125rem;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+
+    white-space: nowrap;
+
+    z-index: 99999;
+}
+
+.tooltipEnter {
+    opacity: 0;
+}
+.tooltipEnterActive {
+    opacity: 1;
+    transition: opacity 100ms ease-in 500ms;
+}
+.tooltipEnterDone {
+    opacity: 1;
+}
+.tooltipExit {
+    opacity: 1;
+}
+.tooltipExitActive {
+    opacity: 0;
+    transition: opacity 50ms ease-in;
+}
