@@ -28,6 +28,18 @@ const Home: NextPage = () => {
   const isVisibleTopBar = useOnScreen(topBarRef);
   const sectionRefs = useRef<SectionRefs>({})
 
+  const downloadResume = () => {
+
+  }
+
+  const goToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+  };
+
+
   return (
     <>
       <Head>
