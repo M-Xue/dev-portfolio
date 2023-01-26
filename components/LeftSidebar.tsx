@@ -10,10 +10,11 @@ interface SectionRefs {
   [name: string]: HTMLDivElement | null;
 }
 interface Props {
-  sectionRefs: SectionRefs
+  sectionRefs: SectionRefs,
+  downloadResume(): void,
 }
 
-export const LeftSidebar = ({sectionRefs}:Props) => {
+export const LeftSidebar = ({sectionRefs, downloadResume}:Props) => {
   const [resumeIconRef, isResumeIconHovered] = useHover<HTMLDivElement | null>();
   const [resumeTooltipPopupRef, isResumeTooltipHovered] = useHover<HTMLDivElement | null>();
   const resumeTooltipRef = useRef<null | HTMLDivElement>(null);
@@ -55,7 +56,7 @@ export const LeftSidebar = ({sectionRefs}:Props) => {
           }}
         >
           <div className={styles.tooltipContainer} ref={(e) => {resumeTooltipRef.current = e; resumeTooltipPopupRef(e);}}>
-            <DownloadResumeTooltip/>
+            <DownloadResumeTooltip downloadResume={downloadResume}/>
           </div>
         </CSSTransition>
 

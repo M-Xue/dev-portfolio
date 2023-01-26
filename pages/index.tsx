@@ -9,7 +9,6 @@ import { Intro } from '../components/sections/intro/Intro'
 import { LeftSidebar } from '../components/LeftSidebar'
 import { Projects } from '../components/sections/projects/Projects'
 import { RightSidebar } from '../components/RightSidebar'
-import { Skills } from '../components/Skills'
 import { TopBar } from '../components/TopBar'
 import useOnScreen from '../hooks/useOnScreen'
 import styles from '../styles/Home.module.css'
@@ -28,8 +27,19 @@ const Home: NextPage = () => {
   const isVisibleTopBar = useOnScreen(topBarRef);
   const sectionRefs = useRef<SectionRefs>({})
 
+  // Source: https://www.geeksforgeeks.org/how-to-download-pdf-file-in-reactjs/
   const downloadResume = () => {
-
+    fetch('../public/Max-Xue-Resume.pdf').then(response => {
+      response.blob().then(blob => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = 'Max-Xue-Resume.pdf';
+        alink.click();
+      })
+    })
   }
 
   const goToTop = () => {
@@ -49,11 +59,11 @@ const Home: NextPage = () => {
       <div className={styles.background}></div>
       <div className={styles.container}>
 
-        <TopBar ref={topBarRef} sectionRefs={sectionRefs.current}/>
+        <TopBar ref={topBarRef} sectionRefs={sectionRefs.current} downloadResume={downloadResume}/>
 
         <AnimatePresence>
           {!isVisibleTopBar && 
-            <LeftSidebar sectionRefs={sectionRefs.current}/>
+            <LeftSidebar sectionRefs={sectionRefs.current} downloadResume={downloadResume}/>
           }
         </AnimatePresence>
         <RightSidebar/>
