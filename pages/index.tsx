@@ -17,13 +17,16 @@ import styles from '../styles/Home.module.css'
 import { motion, AnimatePresence } from "framer-motion"
 import { WorkExperience } from '../components/sections/workExperience/WorkExperience'
 
+interface SectionRefs {
+  [name: string]: HTMLDivElement | null;
+}
 
 
 const Home: NextPage = () => {
 
   const topBarRef = useRef<HTMLDivElement | null>(null);
   const isVisibleTopBar = useOnScreen(topBarRef);
-
+  const sectionRefs = useRef<SectionRefs>({})
 
   return (
     <>
@@ -34,11 +37,11 @@ const Home: NextPage = () => {
       <div className={styles.background}></div>
       <div className={styles.container}>
 
-        <TopBar ref={topBarRef}/>
+        <TopBar ref={topBarRef} sectionRefs={sectionRefs.current}/>
 
         <AnimatePresence>
           {!isVisibleTopBar && 
-            <LeftSidebar/>
+            <LeftSidebar sectionRefs={sectionRefs.current}/>
           }
         </AnimatePresence>
         <RightSidebar/>
@@ -49,13 +52,13 @@ const Home: NextPage = () => {
               ^^ WATCH THIS V IMPORTANT
           */}
 
-
-          <Intro/>
-          <About/>
+          <div ref={(el) => {sectionRefs.current.intro = el;}} className={styles.sectionContainer}><Intro/></div>
+          <div ref={(el) => {sectionRefs.current.about = el;}} className={styles.sectionContainer}><About/></div>
+          <div ref={(el) => {sectionRefs.current.workExperience = el;}} className={styles.sectionContainer}><WorkExperience/></div>
+          <div ref={(el) => {sectionRefs.current.education = el;}} className={styles.sectionContainer}><Education/></div>
+          
           {/* <Skills/> */}
-          <WorkExperience/>
           {/* <Projects/> */}
-          <Education/>
           {/* <Contact/> */}
         </main>
 
