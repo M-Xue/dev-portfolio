@@ -12,25 +12,18 @@ import styles from '../styles/Home.module.css'
 import { AnimatePresence } from "framer-motion"
 import { WorkExperience } from '../components/sections/workExperience/WorkExperience'
 import { CSSTransition } from 'react-transition-group';
-
 import useHover from '../hooks/useHover'
-
-
 
 interface SectionRefs {
   [name: string]: HTMLDivElement | null;
 }
-
 
 const Home: NextPage = () => {
 
   const topBarRef = useRef<HTMLDivElement | null>(null);
   const isVisibleTopBar = useOnScreen(topBarRef);
   const sectionRefs = useRef<SectionRefs>({});
-
   const recentlyDownloadedTimeout = useRef<any>(null);
-
-
   const toastRef = useRef<null | HTMLDivElement>(null);
   const toastTimeout = useRef<any>(null);
   const [isToastActive, setIsToastActive] = useState<boolean>(false);
@@ -69,7 +62,6 @@ const Home: NextPage = () => {
         clearTimeout(recentlyDownloadedTimeout.current);
     }
   }, [])
-  
 
   const goToTop = () => {
     window.scrollTo({
@@ -77,7 +69,6 @@ const Home: NextPage = () => {
         behavior: "smooth",
     });
   };
-
 
   return (
     <>
@@ -98,24 +89,15 @@ const Home: NextPage = () => {
         <RightSidebar/>
 
         <main className={styles.main}>
-
-          {/* https://www.youtube.com/watch?v=9eMp8l4WEpE
-              ^^ WATCH THIS V IMPORTANT
-          */}
-
           <div ref={(el) => {sectionRefs.current.intro = el;}} className={styles.sectionContainer}><Intro/></div>
           <div ref={(el) => {sectionRefs.current.about = el;}} className={styles.sectionContainer}><About/></div>
           <div ref={(el) => {sectionRefs.current.workExperience = el;}} className={styles.sectionContainer}><WorkExperience/></div>
           <div ref={(el) => {sectionRefs.current.education = el;}} className={styles.sectionContainer}><Education/></div>
-          {/* <Skills/> */}
-          {/* <Projects/> */}
-          {/* <Contact/> */}
         </main>
 
         <footer className={styles.footer}>
           
         </footer>
-
 
         <CSSTransition
           in={isToastActive || isToastHovered}
@@ -132,7 +114,6 @@ const Home: NextPage = () => {
         >
           <div className={styles.toastContainer} ref={(el) => {toastRef.current = el; toastHoverRef(el);}}><span>Downloaded Resume</span></div>
         </CSSTransition>
-
       </div>
     </>
   )

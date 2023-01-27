@@ -46,7 +46,6 @@ const courses = [
 export const CourseGrid = () => {
   return (
     <div className={styles.container}>
-        {/* <Course/> */}
       {courses.map(
         (c, idx) => {
           return <Course

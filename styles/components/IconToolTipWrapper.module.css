@@ -6,14 +6,11 @@
 }
 
 .iconContainer:hover {
-    /* transform: translate(0, -4px); */
     padding-top: 0;
     padding-bottom: 4px;
     cursor: pointer;
     color: #682AE9;
 }
-
-
 
 .tooltip {
     position: absolute;

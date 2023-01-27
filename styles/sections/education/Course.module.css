@@ -39,8 +39,6 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    /* transition: background-color 100ms ease-in; */
-    /* transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1); */
     transition: all 50ms ease-in;
 }
 .repoContainer svg:hover {
@@ -108,7 +106,6 @@
     padding: 3px 5px;
     border-radius: 3px;
     font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
-    /* font-family: 'Space Mono', 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;; */
     font-size: 13px;
 }
 

@@ -1,5 +1,4 @@
 .container {
-    /* width: 100vw; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -98,43 +97,6 @@
     margin-right: 0;
     margin-left: 10px;
 }
-
-
-
-/* .tooltipContainer {
-    position: absolute;
-    animation: 0.15s ease-out 0s 1 tooltipFadeIn;
-}
-
-@keyframes tooltipFadeIn {
-    0% {
-      opacity: 0;
-      transform: scale(90%);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(100%);
-    }
-} */
-
-
-
-
-/* .skills {
-    opacity: 0;
-    transform: translateY(-10px);
-    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.15s forwards;
-} */
-
-/* .projects {
-    opacity: 0;
-    transform: translateY(-10px);
-    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s forwards;
-} */
-
-
-
-
 @keyframes dropIn {
     to {
         opacity: 1;
