@@ -137,11 +137,7 @@ export const RightSidebar = () => {
       >
         <div className={styles.toastContainer} ref={(el) => {toastRef.current = el; toastHoverRef(el);}}><span>Copied to clipboard</span></div>
       </CSSTransition>
-
-
-      <div className={styles.toastContainer2}></div>
-
-
+      
       <div className={styles.vertLine}></div>
     </div>
   )

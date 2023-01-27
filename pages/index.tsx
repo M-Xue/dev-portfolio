@@ -1,20 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { About } from '../components/sections/about/About'
-import { Contact } from '../components/sections/contact/Contact'
 import { Education } from '../components/sections/education/Education'
 import { Intro } from '../components/sections/intro/Intro'
 import { LeftSidebar } from '../components/LeftSidebar'
-import { Projects } from '../components/sections/projects/Projects'
 import { RightSidebar } from '../components/RightSidebar'
 import { TopBar } from '../components/TopBar'
 import useOnScreen from '../hooks/useOnScreen'
 import styles from '../styles/Home.module.css'
-
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 import { WorkExperience } from '../components/sections/workExperience/WorkExperience'
+import { CSSTransition } from 'react-transition-group';
+
+import useHover from '../hooks/useHover'
+
+
 
 interface SectionRefs {
   [name: string]: HTMLDivElement | null;
@@ -25,22 +26,50 @@ const Home: NextPage = () => {
 
   const topBarRef = useRef<HTMLDivElement | null>(null);
   const isVisibleTopBar = useOnScreen(topBarRef);
-  const sectionRefs = useRef<SectionRefs>({})
+  const sectionRefs = useRef<SectionRefs>({});
 
-  // Source: https://www.geeksforgeeks.org/how-to-download-pdf-file-in-reactjs/
+  const recentlyDownloadedTimeout = useRef<any>(null);
+
+
+  const toastRef = useRef<null | HTMLDivElement>(null);
+  const toastTimeout = useRef<any>(null);
+  const [isToastActive, setIsToastActive] = useState<boolean>(false);
+  const [toastHoverRef, isToastHovered] = useHover<HTMLDivElement | null>();
   const downloadResume = () => {
-    fetch('../public/Max-Xue-Resume.pdf').then(response => {
-      response.blob().then(blob => {
-        // Creating new object of PDF file
-        const fileURL = window.URL.createObjectURL(blob);
-        // Setting various property values
-        let alink = document.createElement('a');
-        alink.href = fileURL;
-        alink.download = 'Max-Xue-Resume.pdf';
-        alink.click();
-      })
-    })
+    if (recentlyDownloadedTimeout.current === null) {
+      let alink = document.createElement('a');
+      alink.href = "Max-Xue-Resume.pdf";
+      alink.download = 'Max-Xue-Resume';
+      alink.click();
+      alink.remove();
+
+      recentlyDownloadedTimeout.current = setTimeout(() => {
+        recentlyDownloadedTimeout.current = null;
+      }, 5000);
+
+      setIsToastActive(true);
+      if (toastTimeout.current === null) {
+        toastTimeout.current = setTimeout(() => {
+          setIsToastActive(false);
+          toastTimeout.current = null;
+        }, 5000);
+      } else {
+        clearTimeout(toastTimeout.current);
+        toastTimeout.current = setTimeout(() => {
+          setIsToastActive(false);
+          toastTimeout.current = null;
+        }, 5000);
+      }
+    }
   }
+
+  useEffect(() => {
+    return () => {
+      if (recentlyDownloadedTimeout.current)
+        clearTimeout(recentlyDownloadedTimeout.current);
+    }
+  }, [])
+  
 
   const goToTop = () => {
     window.scrollTo({
@@ -78,7 +107,6 @@ const Home: NextPage = () => {
           <div ref={(el) => {sectionRefs.current.about = el;}} className={styles.sectionContainer}><About/></div>
           <div ref={(el) => {sectionRefs.current.workExperience = el;}} className={styles.sectionContainer}><WorkExperience/></div>
           <div ref={(el) => {sectionRefs.current.education = el;}} className={styles.sectionContainer}><Education/></div>
-          
           {/* <Skills/> */}
           {/* <Projects/> */}
           {/* <Contact/> */}
@@ -87,6 +115,24 @@ const Home: NextPage = () => {
         <footer className={styles.footer}>
           
         </footer>
+
+
+        <CSSTransition
+          in={isToastActive || isToastHovered}
+          nodeRef={toastRef}
+          timeout={500} 
+          unmountOnExit
+          classNames={{
+            enter: styles.toastEnter,
+            enterActive: styles.toastEnterActive,
+            enterDone: styles.toastEnterDone,
+            exit: styles.toastExit,
+            exitActive: styles.toastExitActive
+          }}
+        >
+          <div className={styles.toastContainer} ref={(el) => {toastRef.current = el; toastHoverRef(el);}}><span>Downloaded Resume</span></div>
+        </CSSTransition>
+
       </div>
     </>
   )
