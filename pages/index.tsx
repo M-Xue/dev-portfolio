@@ -13,6 +13,7 @@ import { AnimatePresence } from "framer-motion"
 import { WorkExperience } from '../components/sections/workExperience/WorkExperience'
 import { CSSTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover'
+import { MobileSidebar } from '../components/MobileSidebar'
 
 interface SectionRefs {
   [name: string]: HTMLDivElement | null;
@@ -89,6 +90,7 @@ const Home: NextPage = () => {
           }
         </AnimatePresence>
         <RightSidebar/>
+        <MobileSidebar/>
 
         <main className={styles.main}>
           <div ref={(el) => {sectionRefs.current.intro = el;}} className={styles.sectionContainer}><Intro/></div>

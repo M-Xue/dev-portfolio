@@ -1,0 +1,53 @@
+.container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    background-color: #fff;
+    z-index: 99999;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+}
+
+.button {
+    border: none;
+    background-color: white;
+    height: 40px;
+    width: 41px;
+    margin-top: 25px;
+    position:relative;
+    right: 40px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+    clip-path: inset(-5px 0px -5px -5px);
+    border-right: none;
+}
+
+.closed {
+    transform: translateX(calc(100% + 1px));
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.open {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(calc(100% + 1px));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(100% + 1px));
+    }
+}
+  
