@@ -2,30 +2,16 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
     width: min(1200px, 100%);
-    /* font-family: 'CascadiaCode',monospace; */
-    /* font-family: 'Fira Code',monospace; */
     font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
-    /* font-family: Roboto Mono,monospace,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace; */
-    /* -webkit-font-smoothing: antialiased; */
-    -webkit-font-smoothing: antialiased;
-
 }
 
 .flex {
     display: flex;
 }
 
-
-
-
-
 /* ************** need to redo the animations so they fill in for each span instead of each whole heading */
-
-
-
 .h1 {
     font-size: clamp(10px, 6vw, 60px);
     display: flex;
@@ -53,7 +39,6 @@
     white-space: nowrap;
     position: relative;
 }
-
 
 .hello::before, .name::before, .fullstack::before, .engineer::before,
 .hello::after, .name::after, .fullstack::after, .engineer::after{
@@ -97,11 +82,6 @@
         hidden 0s linear 4.66s forwards;
 }
 
-
-
-
-
-
 .fullstack::before {
     background-color: rgb(249,250,251);
     animation: cursor 2.04s steps(17) 6.5s forwards; 
@@ -133,8 +113,6 @@
         remove 10.5s step-end forwards,
         hidden 0s linear 8.54s forwards;
 }
-
-
 
 @keyframes cursor {
     to {left: 100%}
