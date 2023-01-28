@@ -103,3 +103,16 @@
         transform: translateY(0);
     }
 }
+
+
+@media (max-width: 680px) {
+    .navigation {
+        display: none;
+    }
+    .container {
+        padding: 30px 40px;
+    }
+    .logo {
+        font-size:x-large;
+    }
+}

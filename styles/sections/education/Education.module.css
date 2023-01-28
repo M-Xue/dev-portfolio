@@ -44,8 +44,6 @@
     
     cursor: pointer;
     user-select: none;
-    
-
 }
 
 .backdrop {
@@ -70,4 +68,16 @@
     padding: 20px 30px;
 
     width: min(90%, 1200px);
+}
+
+@media (max-width: 680px) {
+    .intro p {
+        font-size: 16px;
+        letter-spacing: default;
+        line-height: default;
+    }
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    } 
 }

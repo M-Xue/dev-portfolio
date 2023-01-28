@@ -124,3 +124,17 @@
     border-radius: 3px;
     font-family: Consolas,Menlo,"courier new",monospace;
 }
+
+
+@media (max-width: 1080px) {
+    .container {
+        width: 49%;
+    }
+}
+
+
+@media (max-width: 930px) {
+    .container {
+        width: 100%;
+    }
+}

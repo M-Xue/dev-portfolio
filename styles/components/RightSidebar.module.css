@@ -158,3 +158,10 @@
         /* The transform above messes with fixed. Using bottom: 0 instead. Check in the container class too */
     }
 }
+
+
+@media (max-width: 680px) {
+    .container {
+        display: none;
+    }
+}

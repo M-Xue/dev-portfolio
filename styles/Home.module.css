@@ -65,10 +65,15 @@
     opacity: 0;
 }
 
-@media (max-width: 768px) {
 
-}
 
 @media (prefers-color-scheme: dark) {
 
+}
+
+
+@media (max-width: 680px) {
+    .main {
+        padding: 0 40px;
+    }
 }

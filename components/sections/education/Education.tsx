@@ -1,9 +1,5 @@
 import React, { useRef, useState } from 'react'
 import styles from '../../../styles/sections/education/Education.module.css'
-import { EducationPage } from './EducationPage';
-import { TabList } from '../../TabList';
-import { CSSTransition } from 'react-transition-group'
-import { motion } from 'framer-motion'
 import { CourseGrid } from './CourseGrid';
 
 

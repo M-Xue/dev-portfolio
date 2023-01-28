@@ -64,3 +64,9 @@
     top: -10.5px;
 }
 
+
+@media (max-width: 680px) {
+    .container {
+        display: none;
+    }
+}
