@@ -1,0 +1,140 @@
+.container {
+    padding: 10px 15px;
+    background: rgb(255,255,255);
+
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+
+    transition: transform 200ms ease-out;
+
+    width: 32.5%;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* .container:hover {
+    transform: translateY(-5px);
+} */
+
+
+.content {
+    margin-bottom: 20px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.repoContainer {
+    position: relative;
+}
+.repoContainer svg {
+    padding: 4px;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 50ms ease-in;
+}
+.repoContainer svg:hover {
+    background-color: rgb(230, 229, 229);
+}
+
+.tooltip {
+    position: absolute;
+    background-color: white;
+    top: -35px;
+    left: 25px;
+
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 4px;
+    backdrop-filter: blur(12px) saturate(190%) contrast(50%) brightness(130%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(223, 225, 228);
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.098);
+
+    font-size: 0.8125rem;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+
+    white-space: nowrap;
+}
+
+.tooltipEnter {
+    opacity: 0;
+}
+.tooltipEnterActive {
+    opacity: 1;
+    transition: opacity 100ms ease-in 500ms;
+}
+.tooltipEnterDone {
+    opacity: 1;
+}
+.tooltipExit {
+    opacity: 1;
+}
+.tooltipExitActive {
+    opacity: 0;
+    transition: opacity 50ms ease-in;
+}
+
+.title {
+    margin-bottom: 15px;
+    /* height: 46px; */
+}
+
+.description {
+    margin-bottom: 15px;
+}
+
+.technologiesList {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row-reverse; */
+}
+.technologiesList li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: rgb(138, 143, 152);
+    background-color: rgb(230, 229, 229);
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+    font-size: 13px;
+}
+
+
+.assignments {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.assignments li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: rgb(138, 143, 152);
+    background-color: rgb(230, 229, 229);
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: Consolas,Menlo,"courier new",monospace;
+}
+
+
+@media (max-width: 1080px) {
+    .container {
+        width: 49%;
+    }
+}
+
+
+@media (max-width: 930px) {
+    .container {
+        width: 100%;
+    }
+}

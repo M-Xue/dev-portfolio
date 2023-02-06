@@ -1,0 +1,124 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: absolute;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+}
+
+.navigation a {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    transition: all 150ms ease-in;
+}
+
+.navigation a:hover {
+    color: #682AE9;
+    padding-top: 0;
+    padding-bottom: 4px;
+}
+
+.navigation svg {
+    margin-right: 10px;
+}
+
+.resume button {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid rgb(223, 225, 228);
+    border-top-color: rgb(223, 225, 228);
+    border-right-color: rgb(223, 225, 228);
+    border-bottom-color: rgb(223, 225, 228);
+    border-left-color: rgb(223, 225, 228);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 1px 1px;
+    border-radius: 4px;
+    background-color: white;
+
+    padding: 6px 10px;
+    transform: translateY(-3px);
+
+    transition: all 0.15s ease-in;
+    font-size: 16px;
+}
+
+.resume button:hover {
+    background-color: rgb(244, 245, 248);
+    border-color: rgb(201, 203, 205);   
+}
+
+.logo {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards;
+    font-size: 20px;
+    user-select: none;
+}
+
+.about {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards;
+}
+
+.work {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.15s forwards;
+}
+
+.education {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s forwards;
+}
+
+.contact {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.35s forwards;
+}
+
+.resume {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropIn 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.45s forwards;
+}
+
+.resume svg {
+    margin-right: 0;
+    margin-left: 10px;
+}
+@keyframes dropIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 680px) {
+    .navigation {
+        display: none;
+    }
+    .container {
+        padding: 30px 40px;
+    }
+    .logo {
+        font-size:x-large;
+    }
+}
+
+@media (max-width: 850px) {
+    .navigation a {
+        margin-right: 20px;
+    }
+}

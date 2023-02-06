@@ -1,0 +1,140 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: min(1200px, 100%);
+    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+}
+
+.flex {
+    display: flex;
+}
+
+/* ************** need to redo the animations so they fill in for each span instead of each whole heading */
+.h1 {
+    font-size: clamp(10px, 8vw, 60px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blueFont, .yellowFont {
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.blueFont {
+    background-image: linear-gradient(rgb(255, 28, 247) 25%, #682AE9 100%);
+}
+
+.yellowFont {
+    background-image: linear-gradient(#F8EF42 25%, #ebe33c 100%);
+}
+
+.hello, .name, .fullstack, .engineer {
+    white-space: nowrap;
+    position: relative;
+}
+
+.hello::before, .name::before, .fullstack::before, .engineer::before,
+.hello::after, .name::after, .fullstack::after, .engineer::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hello::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 2.16s steps(18) 2.5s forwards; 
+}
+
+.hello::after {
+    width: 0.6em;
+    background: black;
+    visibility: hidden;
+    animation: 
+        cursor 2.16s steps(18) 2.5s forwards, 
+        blink 1s linear infinite,
+        remove 4.66s step-end forwards,
+        hidden 0s linear 1.5s forwards;
+}
+
+.name::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 0.84s steps(7) 4.66s forwards; 
+}
+
+.name::after {
+    width: 0.6em;
+    background: black;
+    visibility: hidden;
+    animation: 
+        cursor 0.84s steps(7) 4.66s forwards, 
+        blink 1s linear infinite,
+        remove 6.5s step-end forwards,
+        hidden 0s linear 4.66s forwards;
+}
+
+.fullstack::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 2.04s steps(17) 6.5s forwards; 
+}
+
+.fullstack::after {
+    width: 0.6em;
+    background: black;
+    visibility: hidden;
+    animation: 
+        cursor 2.04s steps(17) 6.5s forwards, 
+        blink 1s linear infinite,
+        remove 8.54s step-end forwards,
+        hidden 0s linear 6.5s forwards;
+}
+
+.engineer::before {
+    background-color: rgb(249,250,251);
+    animation: cursor 1.08s steps(9) 8.54s forwards; 
+}
+
+.engineer::after {
+    width: 0.6em;
+    background: black;
+    visibility: hidden;
+    animation: 
+        cursor 1.08s steps(9) 8.54s forwards, 
+        blink 1s linear infinite,
+        remove 10.5s step-end forwards,
+        hidden 0s linear 8.54s forwards;
+}
+
+@keyframes cursor {
+    to {left: 100%}
+}
+@keyframes blink {
+   50% {
+     opacity: 0;
+   }
+}
+/* @keyframes reverseBlink {
+    50% {
+      opacity: 1;
+    }
+ } */
+@keyframes remove {
+   to {
+     opacity: 0;
+   }
+}
+@keyframes hidden {
+    to {visibility: inherit;}
+} 
+
+
+

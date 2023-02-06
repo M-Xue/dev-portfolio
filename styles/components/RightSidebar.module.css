@@ -1,0 +1,167 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: -10px; 
+    /* bottom: 0; */
+    right: 0;
+    margin: 0 50.25px;
+
+    opacity: 0;
+    /* transform: translateY(10px);  */
+    /* The transform above messes with fixed. Using bottom -10px instead. Check in the keyframe class below too */
+    animation: dropInUp 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.05s forwards
+}
+
+/* https://stackoverflow.com/questions/24626908/how-to-get-rid-of-extra-space-below-svg-in-div-element */
+.container svg {
+    display: block;
+}
+
+.emailIcon {
+    position: relative; /* Makes the tooltip's nearest positioned ancestor this container */
+    margin-bottom: 11px;
+    padding-top: 4px;
+    transition: 0.15s;
+    color: black;
+}
+
+.emailIcon:hover {
+    /* transform: translate(0, -4px); */
+    padding-top: 0;
+    padding-bottom: 4px;
+    cursor: pointer;
+    color: #682AE9;
+}
+
+.vertLine {
+    width: 2px;
+    background-color: #0F1B61;
+    height: 10vh;
+    border-radius: 50px;
+}
+
+
+.tooltipContainer {
+    position: absolute;
+    top: -10.5px;
+    left: -300px;
+    opacity: 0;
+    padding-right: 20px;
+    cursor: default;
+}
+.tooltipEnter {
+    opacity: 0;
+}
+.tooltipEnterActive {
+    transition: all 150ms ease-out;
+    opacity: 1;
+    top: -14.5px;
+}
+.tooltipEnterDone {
+    opacity: 1;
+    top: -14.5px;
+}
+.tooltipExit {
+    opacity: 1;
+    top: -14.5px;
+}
+.tooltipExitActive {
+    transition: all 150ms ease-out;
+    opacity: 0;
+    top: -10.5px;
+}
+
+.tooltipBox {
+    padding: 10px 15px 10px 20px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clipboardIcon {
+    padding: 5px;
+    margin-left: 12px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    transition: all 100ms ease-in;
+    cursor: pointer;
+}
+
+.clipboardIcon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.clipboardIcon:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.clipboardIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.toastContainer {
+    background-color: white;
+    box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(14, 18, 22, 0.2) 0px 10px 20px -15px;
+    border-radius: 6px;
+
+    width: max-content;
+    padding: 15px;
+    margin: 25px;
+
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+    user-select: none;
+}
+
+.toastContainer span {
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: rgb(17, 24, 28);
+    font-size: 15px;
+}
+
+.toastEnter {
+    transform: translate(400px);
+}
+.toastEnterActive {
+    transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate(0);
+}
+.toastEnterDone {
+    transform: translate(0);
+}
+.toastExit {
+    opacity: 1;
+}
+.toastExitActive{
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+
+
+
+@keyframes dropInUp {
+    to {
+        opacity: 1;
+        bottom: 0px;
+        /* transform: translateY(0); */
+        /* The transform above messes with fixed. Using bottom: 0 instead. Check in the container class too */
+    }
+}
+
+
+@media (max-width: 680px) {
+    .container {
+        display: none;
+    }
+}
