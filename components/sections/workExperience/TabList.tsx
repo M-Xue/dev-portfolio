@@ -1,36 +1,16 @@
 import React, { useState } from 'react'
 import styles from '../../../styles/sections/workExperience/TabList.module.css'
 
-const teams = [
-    {
-        name: "Performance Team",
-        activities: [
-            "Added distributed tracing to the application to monitor performance and diagnose bottlenecks in the system processes",
-            "Utilized the OpenTelemetry standard via the Elastic APM third party service",
-            "Assisted in creating an abstraction over Elastic APM using the native C# Activity package for software flexibility and extensibility",
-            "Investigated the backend codebase to determine where tracing would be most effective for engineers to diagnose performance issues"
-        ]
-    },
-    {
-        name: "Engineering Health Team",
-        activities: [
-            "Refactored the applications uncaught Promise error processing system",
-            "Migrated the codebase from React version 17 to version 18",
-            "Converted vanilla TypeScript components using JQuery to React components"
-        ]
-    },
-    {
-        name: "Features Team",
-        activities: [
-            "Created features",
-            "Testing",
-            "Code Review",
-            "TypeScript and React"
-        ]
-    }
-];
+interface team {
+    name: string;
+    activities: string[]
+}
 
-export const TabList = () => {
+interface Props {
+    teams: team[]
+}
+
+export const TabList = ({teams}: Props) => {
     const [currTab, setCurrTab] = useState<number>(0);
 
     return (

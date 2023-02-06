@@ -7,6 +7,7 @@
     background-color: #fff;
     z-index: 99999;
     box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+    transform: translateX(calc(100% + 1px));
 }
 
 .button {
@@ -15,8 +16,8 @@
     height: 40px;
     width: 41px;
     margin-top: 25px;
-    position:relative;
-    right: 40px;
+    position:absolute;
+    left: -40px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     box-shadow: 0 0 0 1px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
@@ -24,30 +25,114 @@
     border-right: none;
 }
 
-.closed {
+.menuEnter {
     transform: translateX(calc(100% + 1px));
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.menuEnterActive {
+    transition: all 750ms ease-in;
+    transform: translateX(0);
+}
+.menuEnterDone {
+    transform: translateX(0);
+}
+.menuExit {
+    transform: translateX(0);
+}
+.menuExitActive {
+    transition: all 750ms ease-in;
+    transform: translateX(calc(100% + 1px));
 }
 
-.open {
-    animation: 1s ease-out 0s 1 slideInFromRight;
+
+.nav {
+    margin-top: 2.95px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 14px;
+    padding-bottom: 10px;
 }
 
-@keyframes slideInFromRight {
-    0% {
-      transform: translateX(calc(100% + 1px));
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
+.nav span {
+    position: relative;
+    bottom: 3px;
+}
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(100% + 1px));
+.iconTitle svg {
+    height: 18px;
+    width: 18px;
+    margin-right: 10px;
+}
+
+.sections {
+    margin-top: 2.5px;
+    width: calc(100% - 60px);
+}
+
+.sections div {
+    margin-bottom: 25px;
+}
+
+.links {
+    width: 100%;
+}
+
+.linkContainer {
+    margin-bottom: 25px;
+    width: 40%;
+}
+
+.resume {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.download {
+    margin-right: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: -3px;
+}
+
+.email {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.download, .clipboardIcon {
+    border: none;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: -2.5px;
+}
+
+.download:hover, .clipboardIcon:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.download:active, .clipboardIcon:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.clipboardIcon svg, .download svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+@media (min-width: 680px) {
+    .container {
+        display: none;
     }
 }
-  

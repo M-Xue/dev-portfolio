@@ -29,3 +29,14 @@
         margin-bottom: 10px;
     } 
 }
+
+@media (max-width: 779px) {
+    .tabListContainer {
+        display: none;
+    }
+}
+@media (min-width: 780px) {
+    .cardListContainer {
+        display: none;
+    }
+}

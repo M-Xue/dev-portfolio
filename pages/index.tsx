@@ -90,7 +90,7 @@ const Home: NextPage = () => {
           }
         </AnimatePresence>
         <RightSidebar/>
-        <MobileSidebar/>
+        <MobileSidebar sectionRefs={sectionRefs.current} downloadResume={downloadResume}/>
 
         <main className={styles.main}>
           <div ref={(el) => {sectionRefs.current.intro = el;}} className={styles.sectionContainer}><Intro/></div>
