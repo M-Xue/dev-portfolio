@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover'
-import styles from '../styles/components/IconTooltipWrapper.module.css'
+import styles from '../styles/components/IconToolTipWrapper.module.css'
 
 // interface SectionRefs {
 //     [name: string]: HTMLDivElement | null;
