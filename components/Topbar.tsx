@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useState } from 'react'
 import useOnScreen from '../hooks/useOnScreen'
-import styles from '../styles/components/TopBar.module.css'
+import styles from '../styles/components/Topbar.module.css'
 import { DownloadResumeTooltip } from './DownloadResumeTooltip';
 
 interface SectionRefs {
