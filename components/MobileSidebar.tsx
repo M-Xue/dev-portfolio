@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { SyntheticEvent, useRef, useState } from 'react'
 import styles from '../styles/components/MobileSidebar.module.css';
 import { CSSTransition } from 'react-transition-group';
 
@@ -20,7 +20,7 @@ export const MobileSidebar = ({sectionRefs, downloadResume}:Props) => {
     const [recentlyCopied, setRecentlyCopied] = useState<boolean>(false);
     const copyIconTimeout = useRef<any>(null);
 
-    const handleClipboardCopyClick = async (e) => {
+    const handleClipboardCopyClick = async (e: SyntheticEvent) => {
         setRecentlyCopied(true);
 
         if (copyIconTimeout.current === null) {

@@ -3,7 +3,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover';
 import styles from '../styles/components/LeftSidebar.module.css';
 import { motion, AnimatePresence } from "framer-motion";
-import { IconTooltipWrapper } from './IconTooltipWrapper';
+import { IconTooltipWrapper } from './IconToolTipWrapper';
 import { DownloadResumeTooltip } from './DownloadResumeTooltip';
 
 interface SectionRefs {

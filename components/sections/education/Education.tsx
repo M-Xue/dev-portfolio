@@ -15,7 +15,7 @@ export const Education = () => {
       <div className={styles.content}>
         <div className={styles.intro}>
           <p>
-            I'm a final year student doing a Computer Science degree at UNSW. 
+            I&apos;m a final year student doing a Computer Science degree at UNSW. 
             I am also the Education Executive of CSESoc for 2023, where I lead multiple subcommittees to foster an inclusive and self-driven student developer community.
           </p> 
         </div>

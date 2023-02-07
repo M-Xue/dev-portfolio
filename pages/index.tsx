@@ -128,9 +128,6 @@ const Home: NextPage = () => {
 export default Home
 
 
-export async function getStaticProps() {
-}
-
 // light: rgb(249,250,251) from TanStack and https://leerob.io/
 // - font: black (or rgb(17,24,39))
 // dark: rgb(27,31,36) from GitHub CoPilot

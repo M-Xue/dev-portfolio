@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import useHover from '../hooks/useHover'
 import styles from '../styles/components/RightSidebar.module.css'
-import { IconTooltipWrapper } from './IconTooltipWrapper';
+import { IconTooltipWrapper } from './IconToolTipWrapper';
 
 export const RightSidebar = () => {
   const [emailIconRef, isHovered] = useHover<HTMLDivElement | null>();
@@ -16,7 +16,7 @@ export const RightSidebar = () => {
   const [isToastActive, setIsToastActive] = useState<boolean>(false);
   const [toastHoverRef, isToastHovered] = useHover<HTMLDivElement | null>();
 
-  const handleClipboardCopyClick = async (e) => {
+  const handleClipboardCopyClick = async (e: SyntheticEvent) => {
     setRecentlyCopied(true);
 
     if (copyIconTimeout.current === null) {
