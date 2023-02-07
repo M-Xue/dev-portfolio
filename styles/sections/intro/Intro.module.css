@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: min(1200px, 100%);
-    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+    font-family: 'Roboto Mono',monospace;
 }
 
 .flex {
