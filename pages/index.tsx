@@ -6,7 +6,7 @@ import { Education } from '../components/sections/education/Education'
 import { Intro } from '../components/sections/intro/Intro'
 import { LeftSidebar } from '../components/LeftSidebar'
 import { RightSidebar } from '../components/RightSidebar'
-import { TopBar } from '../components/TopBar'
+import { TopBar } from '../components/Topbar'
 import useOnScreen from '../hooks/useOnScreen'
 import styles from '../styles/Home.module.css'
 import { AnimatePresence } from "framer-motion"
