@@ -28,8 +28,9 @@ const teams = [
           "Created new features for users to interact and configure items on the screen",
           "Implemented both the backend and frontend components of these features",
           "Extended existing features",
-          "Wrote integration and unit tests for use cases of features I implemented or extended",
+          "Wrote integration and unit tests",
           "Contributed to code reviews",
+          "Worked closely with Product Team to consider UX and feature prioritization"
       ]
   }
 ];
